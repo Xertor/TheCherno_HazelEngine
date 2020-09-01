@@ -5,8 +5,10 @@
     <ClInclude Include="src\Hazel\Application.h" />
     <ClInclude Include="src\Hazel.h" />
     <ClInclude Include="src\Hazel\EntryPoint.h" />
+    <ClInclude Include="src\Hazel\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp" />
+    <ClCompile Include="src\Hazel\Log.cpp" />
   </ItemGroup>
 </Project>

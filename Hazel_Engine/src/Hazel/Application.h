@@ -2,8 +2,8 @@
 
 #include "Core.h"
 
-namespace Hazel {
-
+namespace Hazel 
+{
 	class HAZEL_API Application
 	{
 	public:
