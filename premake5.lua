@@ -19,6 +19,9 @@ project "Hazel_Engine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "hzpch.h"
+	pchsource "Hazel_Engine/src/hzpch.cpp"
 
 	files
 	{
@@ -28,8 +31,8 @@ project "Hazel_Engine"
 
 	includedirs
 	{
-		"/%{prj.name}/src",
-		"/%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include"
 	}
 
 	filter "platforms:x86_64"
