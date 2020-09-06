@@ -75,10 +75,6 @@ namespace Hazel
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
-	protected:
-		MouseButtonPressedEvent(int button) : MouseButtonEvent(button), m_Button(button) {}
-
-		int m_Button;
 	};
 
 	class HAZEL_API MouseButtonReleasedEvent : public MouseButtonEvent
