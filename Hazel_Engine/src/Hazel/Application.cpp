@@ -2,7 +2,10 @@
 #include "Application.h"
 
 #include "Hazel/Log.h"
-#include "imgui.h"
+
+#include <glad/glad.h>
+
+#include "Input.h"
 
 namespace Hazel 
 {
@@ -53,8 +56,16 @@ namespace Hazel
 	{
 		while(m_Running)
 		{
+			glClearColor(0, 0, 0, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+
 			for(Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			auto[x, y] = Input::GetMousePosition();
+			HZ_CORE_TRACE("Mouse position X: {0}, Y: {1}", x, y);
+
+			//Input::IsKeyPressed()
 
 			m_Window->OnUpdate();
 		}

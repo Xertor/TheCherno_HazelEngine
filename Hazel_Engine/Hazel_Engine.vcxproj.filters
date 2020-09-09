@@ -68,6 +68,8 @@
       <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\Hazel\Input.h" />
+    <ClInclude Include="src\Hazel\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -95,5 +97,6 @@
       <Filter>Hazel\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hzpch.cpp" />
+    <ClCompile Include="src\Hazel\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
