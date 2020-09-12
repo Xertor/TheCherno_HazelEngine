@@ -11,6 +11,10 @@ public:
 	void OnUpdate() override
 	{
 		//HZ_INFO("Example::Update");
+
+		if(Hazel::Input::IsMouseButtonPressed(HZ_MOUSE_BUTTON_1))
+			HZ_INFO("Mouse Button 1 is pressed!");
+
 	}
 
 	void OnEvent(Hazel::Event& event) override
