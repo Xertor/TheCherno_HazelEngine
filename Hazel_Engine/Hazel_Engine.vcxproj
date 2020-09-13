@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;GLFW_INCLUDE_NONE;HZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\glm;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -93,7 +93,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Hazel_Engine\Hazel_Engine.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;GLFW_INCLUDE_NONE;HZ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\glm;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +119,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Hazel_Engine\Hazel_Engine.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;GLFW_INCLUDE_NONE;HZ_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\glm;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -145,7 +145,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Hazel_Engine\Hazel_Engine.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

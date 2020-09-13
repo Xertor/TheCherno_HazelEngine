@@ -46,6 +46,12 @@
     <ClInclude Include="src\Hazel\ImGui\ImGuiLayer.h">
       <Filter>Hazel\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hazel\Input.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\KeyCodes.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hazel\Layer.h">
       <Filter>Hazel</Filter>
     </ClInclude>
@@ -55,11 +61,17 @@
     <ClInclude Include="src\Hazel\Log.h">
       <Filter>Hazel</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hazel\MouseButtonCodes.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hazel\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Hazel\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\Platform\OpenGL\imgui_impl_glfw.h">
       <Filter>Hazel\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\Platform\Windows\WindowsInput.h">
+      <Filter>Hazel\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h">
       <Filter>Hazel\Platform\Windows</Filter>
@@ -68,10 +80,6 @@
       <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\hzpch.h" />
-    <ClInclude Include="src\Hazel\Input.h" />
-    <ClInclude Include="src\Hazel\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Hazel\KeyCodes.h" />
-    <ClInclude Include="src\Hazel\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -95,10 +103,12 @@
     <ClCompile Include="src\Hazel\Platform\OpenGL\imgui_impl_glfw.cpp">
       <Filter>Hazel\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hazel\Platform\Windows\WindowsInput.cpp">
+      <Filter>Hazel\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Hazel\Platform\Windows\WindowsWindow.cpp">
       <Filter>Hazel\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hzpch.cpp" />
-    <ClCompile Include="src\Hazel\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

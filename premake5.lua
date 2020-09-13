@@ -16,6 +16,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hazel_Engine/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hazel_Engine/vendor/Glad/include"
+IncludeDir["glm"] = "Hazel_Engine/vendor/glm/"
 IncludeDir["ImGui"] = "Hazel_Engine/vendor/imgui"
 
 group "Dependencies"
@@ -49,6 +50,7 @@ project "Hazel_Engine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.ImGui}"
 	}
 	
@@ -111,6 +113,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Hazel_Engine/vendor/spdlog/include",
+		"Hazel_Engine/vendor/glm/",
 		"Hazel_Engine/src"
 	}
 
