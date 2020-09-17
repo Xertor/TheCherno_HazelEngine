@@ -9,6 +9,11 @@ workspace "Hazel_Engine"
 		"Release",
 		"Dist"
 	}
+	
+	flags
+	{
+		"MultiProcessorCompile"
+	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -114,7 +119,8 @@ project "Sandbox"
 	{
 		"Hazel_Engine/vendor/spdlog/include",
 		"Hazel_Engine/vendor/glm/",
-		"Hazel_Engine/src"
+		"Hazel_Engine/src",
+		"Hazel_Engine/vendor/"
 	}
 
 	links
