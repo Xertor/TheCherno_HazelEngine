@@ -73,6 +73,7 @@
     <ClInclude Include="src\hzpch.h" />
     <ClInclude Include="src\Hazel\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Hazel\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Hazel\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -101,5 +102,6 @@
     </ClCompile>
     <ClCompile Include="src\hzpch.cpp" />
     <ClCompile Include="src\Hazel\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Hazel\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>
