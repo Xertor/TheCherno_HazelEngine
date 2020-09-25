@@ -59,6 +59,7 @@ project "Hazel_Engine"
 	includedirs
 	{
 		"%{prj.name}/src",
+		"%{prj.name}/src/Hazel",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
