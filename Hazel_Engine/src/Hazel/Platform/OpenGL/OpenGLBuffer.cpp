@@ -57,4 +57,30 @@ namespace Hazel
 	{
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
+
+	//////////////////////////////////////////////////////////////////////////
+	// VertexArray ///////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////
+
+	OpenGLVertexArray::OpenGLVertexArray(uint32_t size)
+		: m_Size(size)
+	{
+		glGenVertexArrays(size, &m_RendererID);
+	}
+
+	OpenGLVertexArray::~OpenGLVertexArray()
+	{
+
+	}
+
+	void OpenGLVertexArray::Bind() const
+	{
+		glBindVertexArray(m_RendererID);
+	}
+
+	void OpenGLVertexArray::Unbind() const
+	{
+
+	}
+
 }
