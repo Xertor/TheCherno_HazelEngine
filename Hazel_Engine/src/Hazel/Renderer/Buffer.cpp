@@ -29,16 +29,4 @@ namespace Hazel
 		HZ_CORE_ASSERT(false, "Uknown RendererAPI!");
 		return nullptr;
 	}
-
-	VertexArray* VertexArray::Create(uint32_t size)
-	{
-		switch(Renderer::GetAPI())
-		{
-			case RendererAPI::None: HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::OpenGL: return new OpenGLVertexArray(size);
-		}
-
-		HZ_CORE_ASSERT(false, "Uknown RendererAPI!");
-		return nullptr;
-	}
 }

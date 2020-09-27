@@ -34,17 +34,4 @@ namespace Hazel
 		uint32_t m_RendererID;
 		uint32_t m_Count;
 	};
-
-	class OpenGLVertexArray : public VertexArray
-	{
-	public:
-		OpenGLVertexArray(uint32_t size);
-		virtual ~OpenGLVertexArray();
-
-		virtual void Bind() const override;
-		virtual void Unbind() const override;
-	private:
-		uint32_t m_RendererID;
-		uint32_t m_Size;
-	};
 }

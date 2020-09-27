@@ -96,6 +96,7 @@
     </ClInclude>
     <ClInclude Include="src\hzpch.h" />
     <ClInclude Include="src\Hazel\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Hazel\Renderer\VertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -139,5 +140,6 @@
     </ClCompile>
     <ClCompile Include="src\hzpch.cpp" />
     <ClCompile Include="src\Hazel\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Hazel\Renderer\VertexArray.cpp" />
   </ItemGroup>
 </Project>
