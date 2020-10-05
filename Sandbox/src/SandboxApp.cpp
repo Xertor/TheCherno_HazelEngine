@@ -8,7 +8,7 @@ class ExampleLayer : public Hazel::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f)
+		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f, 0.0f, 0.0f)
 	{
 		m_VertexArray.reset(Hazel::VertexArray::Create());
 
@@ -18,7 +18,6 @@ public:
 			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
-
 		
 		vertexBuffer.reset(Hazel::VertexBuffer::Create(vertices, sizeof(vertices)));
 		vertexBuffer->Bind();
@@ -138,9 +137,27 @@ public:
 		Hazel::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Hazel::RenderCommand::Clear();
 
-		// TODO make this use the WASD keys
-		m_Camera.SetPosition({0.5f, 0.5f, 0.0f});
-		m_Camera.SetRotation(45.0f);
+		if(Hazel::Input::IsKeyPressed(HZ_KEY_LEFT_SHIFT))
+		{
+			if(Hazel::Input::IsKeyPressed(HZ_KEY_LEFT_SHIFT) && (Hazel::Input::IsKeyPressed(HZ_KEY_A) || Hazel::Input::IsKeyPressed(HZ_KEY_LEFT)))
+				m_CameraRotation -= m_CameraRotationSpeed;
+			if(Hazel::Input::IsKeyPressed(HZ_KEY_LEFT_SHIFT) && (Hazel::Input::IsKeyPressed(HZ_KEY_D) || Hazel::Input::IsKeyPressed(HZ_KEY_RIGHT)))
+				m_CameraRotation += m_CameraRotationSpeed;
+		}
+		else
+		{
+			if(Hazel::Input::IsKeyPressed(HZ_KEY_A) || Hazel::Input::IsKeyPressed(HZ_KEY_LEFT))
+				m_CameraPosition.x -= m_CameraMoveSpeed;
+			if(Hazel::Input::IsKeyPressed(HZ_KEY_D) || Hazel::Input::IsKeyPressed(HZ_KEY_RIGHT))
+				m_CameraPosition.x += m_CameraMoveSpeed;
+			if(Hazel::Input::IsKeyPressed(HZ_KEY_W) || Hazel::Input::IsKeyPressed(HZ_KEY_UP))
+				m_CameraPosition.y += m_CameraMoveSpeed;
+			if(Hazel::Input::IsKeyPressed(HZ_KEY_S) || Hazel::Input::IsKeyPressed(HZ_KEY_DOWN))
+				m_CameraPosition.y -= m_CameraMoveSpeed;
+		}
+
+		m_Camera.SetPosition(m_CameraPosition);
+		m_Camera.SetRotation(m_CameraRotation);
 
 		Hazel::Renderer::BeginScene(m_Camera);
 
@@ -148,9 +165,6 @@ public:
 		Hazel::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Hazel::Renderer::EndScene();
-
-		if(Hazel::Input::IsMouseButtonPressed(HZ_MOUSE_BUTTON_1))
-			HZ_INFO("Mouse Button 1 is pressed!");
 	}
 
 	virtual void OnImGuiRender() override
@@ -163,7 +177,7 @@ public:
 
 	void OnEvent(Hazel::Event& event) override
 	{
-		HZ_TRACE("{0}", event);
+		/*HZ_TRACE("{0}", event);*/
 	}
 private:
 	std::shared_ptr<Hazel::VertexArray> m_VertexArray;
@@ -173,6 +187,11 @@ private:
 	std::shared_ptr<Hazel::Shader> m_BlueShader;
 
 	Hazel::OrthographicCamera m_Camera;
+	glm::vec3 m_CameraPosition;
+	float m_CameraMoveSpeed = 0.05f;
+	
+	float m_CameraRotation = 0.0f;
+	float m_CameraRotationSpeed = 1.0f;
 };
 
 class Sandbox : public Hazel::Application
