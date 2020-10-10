@@ -123,6 +123,7 @@ project "Sandbox"
 		"Hazel_Engine/vendor/spdlog/include",
 		"Hazel_Engine/vendor/glm/",
 		"Hazel_Engine/src",
+		"Hazel_Engine/src/Hazel",
 		"Hazel_Engine/vendor/"
 	}
 
