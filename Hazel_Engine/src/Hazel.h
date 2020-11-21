@@ -16,6 +16,7 @@
 
 // ---Renderer--------------------
 #include "Hazel/Renderer/Renderer.h"
+#include "Hazel/Renderer/Renderer2D.h"
 #include "Hazel/Renderer/RenderCommand.h"
 
 #include "Hazel/Renderer/Shader.h"
