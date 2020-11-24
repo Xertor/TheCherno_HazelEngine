@@ -28,5 +28,5 @@ uniform sampler2D u_Texture;
 
 void main()
 {
-	color = texture(u_Texture, v_TextCoord);
+	color = texture(u_Texture, v_TextCoord * 10.0); //* vec4(1.0, 0.8, 0.8, 1.0); // red tint
 }
