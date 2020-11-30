@@ -51,7 +51,7 @@ namespace Hazel
 		dispatcher.Dispatch<WindowCloseEvent>(HZ_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(HZ_BIND_EVENT_FN(Application::OnWindowResize));
 
-		HZ_CORE_TRACE("{0}", e);
+		//HZ_CORE_TRACE("{0}", e);
 
 		for(auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
@@ -81,7 +81,7 @@ namespace Hazel
 			m_ImGuiLayer->End();
 
 			auto[x, y] = Input::GetMousePosition();
-			HZ_CORE_TRACE("Mouse position X: {0}, Y: {1}", x, y);
+			//HZ_CORE_TRACE("Mouse position X: {0}, Y: {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
