@@ -10,11 +10,13 @@ namespace Hazel
 	OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
 		: m_windowHandle(windowHandle)
 	{
-		HZ_CORE_ASSERT(m_windowHandle, "Failed to initialize window handle!");
+		HZ_CORE_ASSERT(m_windowHandle, "Window handle is null!");
 	}
 
 	void OpenGLContext::Init()
 	{
+		HZ_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_windowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		HZ_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -23,10 +25,21 @@ namespace Hazel
 		HZ_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
 		HZ_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
 		HZ_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
+
+	#ifdef HZ_ENABLE_ASSERTS
+		int versionMajor;
+		int versionMinor;
+		glGetIntegerv(GL_MAJOR_VERSION, &versionMajor);
+		glGetIntegerv(GL_MINOR_VERSION, &versionMinor);
+
+		HZ_CORE_ASSERT(versionMajor > 4 || (versionMajor == 4 && versionMinor >= 5), "Hazel requires at least OpenGL version 4.5!");
+	#endif
 	}
 
 	void OpenGLContext::SwapBuffers()
 	{
+		HZ_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_windowHandle);
 	}
 }
