@@ -262,3 +262,6 @@ __pycache__/
 *.idb
 *.tlog
 Sandbox/imgui.ini
+Sandbox/HazelProfile-Runtime.json
+Sandbox/HazelProfile-Shutdown.json
+Sandbox/HazelProfile-Startup.json
