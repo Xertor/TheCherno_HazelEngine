@@ -265,3 +265,9 @@ Sandbox/imgui.ini
 Sandbox/HazelProfile-Runtime.json
 Sandbox/HazelProfile-Shutdown.json
 Sandbox/HazelProfile-Startup.json
+bin-int/
+Hazel-Editor/assets/game/textures/RPGpack_sheet_2X.png
+Hazel-Editor/assets/textures/
+Hazel-Editor/HazelProfile-Startup.json
+Hazel-Editor/HazelProfile-Shutdown.json
+Hazel-Editor/HazelProfile-Runtime.json

@@ -2,6 +2,7 @@ workspace "Hazel_Engine"
 	system "Windows"
 	platforms { "x86_64" }
 	architecture "x86_64"
+	startproject "Sandbox"
 	
 	configurations
 	{
@@ -29,7 +30,6 @@ group "Dependencies"
 	include "Hazel_Engine/vendor/GLFW"
 	include "Hazel_Engine/vendor/Glad"
 	include "Hazel_Engine/vendor/imgui"
-	
 group ""
 
 project "Hazel_Engine"
@@ -110,6 +110,61 @@ project "Hazel_Engine"
 
 project "Sandbox"
 	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"Hazel_Engine/vendor/spdlog/include",
+		"Hazel_Engine/vendor/glm/",
+		"Hazel_Engine/src",
+		"Hazel_Engine/src/Hazel",
+		"Hazel_Engine/vendor/"
+	}
+
+	links
+	{
+		"Hazel_Engine"
+	}
+
+	filter "platforms:x86_64"
+		architecture "x86_64"
+		system "Windows"
+		systemversion "latest"
+
+		defines
+		{
+			"HZ_PLATFORM_WINDOWS"
+		}
+
+	filter "configurations:Debug"
+		defines "HZ_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "HZ_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "HZ_DIST"
+		runtime "Release"
+		optimize "on"
+
+project "Hazel-Editor"
+	location "Hazel-Editor"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
