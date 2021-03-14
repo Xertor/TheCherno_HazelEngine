@@ -271,3 +271,8 @@ Hazel-Editor/assets/textures/
 Hazel-Editor/HazelProfile-Startup.json
 Hazel-Editor/HazelProfile-Shutdown.json
 Hazel-Editor/HazelProfile-Runtime.json
+Hazelnut/assets/textures/
+Hazelnut/assets/game/textures/
+Hazelnut/HazelProfile-Runtime.json
+Hazelnut/HazelProfile-Shutdown.json
+Hazelnut/HazelProfile-Startup.json
