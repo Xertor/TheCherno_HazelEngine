@@ -75,7 +75,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;GLFW_INCLUDE_NONE;HZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;HZ_BUILD_DLL;GLFW_INCLUDE_NONE;HZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;src\Hazel;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\glm;vendor\stb_image;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -170,7 +170,6 @@
     <ClInclude Include="src\Hazel\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Hazel\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Hazel\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Hazel\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Hazel\Renderer\Buffer.h" />
     <ClInclude Include="src\Hazel\Renderer\Framebuffer.h" />

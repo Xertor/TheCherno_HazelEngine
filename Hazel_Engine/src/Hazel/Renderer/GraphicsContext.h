@@ -9,5 +9,7 @@ namespace Hazel
 		virtual void SwapBuffers() = 0;
 
 		static Scope<GraphicsContext> Create(void* window);
+
+		virtual ~GraphicsContext() = default;
 	};
 }

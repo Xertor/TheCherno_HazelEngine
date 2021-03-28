@@ -48,9 +48,6 @@
     <ClInclude Include="src\Hazel\Core\EntryPoint.h">
       <Filter>src\Hazel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hazel\Core\Input.h">
-      <Filter>src\Hazel\Core</Filter>
-    </ClInclude>
     <ClInclude Include="src\Hazel\Core\KeyCodes.h">
       <Filter>src\Hazel\Core</Filter>
     </ClInclude>
@@ -108,9 +105,6 @@
     <ClInclude Include="src\Hazel\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Hazel\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hazel\Platform\Windows\WindowsInput.h">
-      <Filter>src\Hazel\Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h">
       <Filter>src\Hazel\Platform\Windows</Filter>
     </ClInclude>
@@ -165,6 +159,7 @@
     <ClInclude Include="src\Hazel\Core\PlatformDetection.h" />
     <ClInclude Include="src\Hazel\Core\Base.h" />
     <ClInclude Include="src\Hazel\Core\Assert.h" />
+    <ClInclude Include="src\Hazel\Core\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Core\Application.cpp">

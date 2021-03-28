@@ -88,7 +88,6 @@ project "Hazel_Engine"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS",
 			"HZ_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -143,11 +142,6 @@ project "Sandbox"
 		system "Windows"
 		systemversion "latest"
 
-		defines
-		{
-			"HZ_PLATFORM_WINDOWS"
-		}
-
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"
@@ -197,11 +191,6 @@ project "Hazelnut"
 		architecture "x86_64"
 		system "Windows"
 		systemversion "latest"
-
-		defines
-		{
-			"HZ_PLATFORM_WINDOWS"
-		}
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
