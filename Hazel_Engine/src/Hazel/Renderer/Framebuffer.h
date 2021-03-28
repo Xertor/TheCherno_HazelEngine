@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hazel/Core/Core.h"
+#include "Hazel/Core/Base.h"
 
 namespace Hazel
 {
@@ -26,5 +26,7 @@ namespace Hazel
 		virtual const FrameBufferSpecification& GetSpecification() const = 0;
 
 		static Ref<Framebuffer> Create(const FrameBufferSpecification& spec);
+
+		virtual ~Framebuffer() = default;
 	};
 }
