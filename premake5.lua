@@ -25,6 +25,7 @@ IncludeDir["Glad"] = "Hazel_Engine/vendor/Glad/include"
 IncludeDir["glm"] = "Hazel_Engine/vendor/glm/"
 IncludeDir["ImGui"] = "Hazel_Engine/vendor/imgui"
 IncludeDir["stb_image"] = "Hazel_Engine/vendor/stb_image/"
+IncludeDir["entt"] = "Hazel_Engine/vendor/entt/include"
 
 group "Dependencies"
 	include "Hazel_Engine/vendor/GLFW"
@@ -70,7 +71,8 @@ project "Hazel_Engine"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.entt}"
 	}
 	
 	links
@@ -129,7 +131,8 @@ project "Sandbox"
 		"Hazel_Engine/vendor/glm/",
 		"Hazel_Engine/src",
 		"Hazel_Engine/src/Hazel",
-		"Hazel_Engine/vendor/"
+		"Hazel_Engine/vendor/",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -176,10 +179,11 @@ project "Hazelnut"
 	includedirs
 	{
 		"Hazel_Engine/vendor/spdlog/include",
-		"Hazel_Engine/vendor/glm/",
 		"Hazel_Engine/src",
 		"Hazel_Engine/src/Hazel",
-		"Hazel_Engine/vendor/"
+		"Hazel_Engine/vendor/",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
