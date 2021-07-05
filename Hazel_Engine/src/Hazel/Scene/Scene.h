@@ -4,16 +4,16 @@
 
 #include "Hazel/Core/Timestep.h"
 
-using Entity = entt::entity;
-
 namespace Hazel
 {
+	class Entity;
+
 	class Scene
 	{
 	public:
 		Scene();
 
-		Entity CreateEntity();
+		Entity CreateEntity(const std::string& name = std::string());
 
 		// TEMP
 		entt::registry& Reg() { return m_Registry; }
@@ -23,5 +23,7 @@ namespace Hazel
 		~Scene();
 	private:
 		entt::registry m_Registry;
+
+		friend class Entity;
 	};
 }
