@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Hazel.h" />
+    <ClInclude Include="src\Hazel\Renderer\Camera.h" />
     <ClInclude Include="src\Hazel\Core\Application.h" />
     <ClInclude Include="src\Hazel\Core\Assert.h" />
     <ClInclude Include="src\Hazel\Core\Base.h" />

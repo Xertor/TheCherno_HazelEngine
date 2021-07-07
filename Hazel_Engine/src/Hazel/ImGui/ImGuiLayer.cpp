@@ -95,7 +95,6 @@ namespace Hazel
 
 		// Rendering
 		ImGui::Render();
-
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 		if(io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
